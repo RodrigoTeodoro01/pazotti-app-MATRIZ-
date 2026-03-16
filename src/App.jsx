@@ -42,11 +42,7 @@ function App() {
 
   const [cloudUrl, setCloudUrl] = useState(() => {
     const saved = localStorage.getItem('pazotti_cloud_url');
-    const NEW_URL = 'https://script.google.com/macros/s/AKfycbyuftwUYeprNh0b7-gDkErDf7kuWeyjxl_fftn9VnHAvLZ2Q1DNiUKVYX-eXT2id4EMdg/exec';
-    const OLD_URL = 'https://script.google.com/macros/s/AKfycbwFOWIgG1Zll3EhcNNFR0apsjSeu5OBKKZ7DewlXHywgc65X6VVZFUnwY5Ixe4Ygv33Bw/exec';
-
-    // Auto-migrate if it's the old default
-    if (saved === OLD_URL) return NEW_URL;
+    const NEW_URL = 'https://script.google.com/macros/s/AKfycbwfIi6yPtao742yOHPL0zJiL2751l7GSNc3W9Y5YRvecyh-w8hVh3Gd55xYXBwZ5pgN/exec';
     return saved || NEW_URL;
   });
   const [syncStatus, setSyncStatus] = useState('idle'); // 'idle', 'syncing', 'success', 'error'
