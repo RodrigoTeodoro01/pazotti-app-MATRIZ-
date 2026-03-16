@@ -3,7 +3,9 @@ import * as XLSX from 'xlsx';
 import { Download, PlusCircle, Trash2, FileSpreadsheet, LogIn, LogOut, CloudSync, User, Users as UsersIcon, LayoutPanelLeft, Settings as SettingsIcon, RefreshCw, CheckCircle2, XCircle, LayoutDashboard, TrendingUp, BarChart3, PieChart as PieChartIcon, Briefcase } from 'lucide-react';
 
 const SUPERVISORES = [
-  "BRUNO", "GERAL"
+  "BRUNO", "DANIEL", "EDISON", "EMILIO DIAS", "HENRIQUE",
+  "JEFERSON", "JEZER GOMES", "LUCAS", "MANOEL NUNES",
+  "OZIEL", "RODRIGO", "RONALDO", "WELLINGTON", "GERAL"
 ];
 
 const INDUSTRIES = [
@@ -39,8 +41,14 @@ function App() {
   });
 
   const [cloudUrl, setCloudUrl] = useState(() => {
-    const saved = localStorage.getItem('pazotti_cloud_url');
     const NEW_URL = 'https://script.google.com/macros/s/AKfycbwfIi6yPtao742yOHPL0zJiL2751l7GSNc3W9Y5YRvecyh-w8hVh3Gd55xYXBwZ5pgN/exec';
+    const saved = localStorage.getItem('pazotti_cloud_url');
+    
+    // FORCED SYNC: If saved URL is different from NEW_URL, we override it to fix the user's sync issue
+    if (saved !== NEW_URL) {
+      localStorage.setItem('pazotti_cloud_url', NEW_URL);
+      return NEW_URL;
+    }
     return saved || NEW_URL;
   });
   const [syncStatus, setSyncStatus] = useState('idle'); // 'idle', 'syncing', 'success', 'error'
