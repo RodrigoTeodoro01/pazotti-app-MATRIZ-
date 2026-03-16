@@ -23,16 +23,16 @@ const AUTHORIZERS = ["INDUSTRIA", "PAZOTTI"];
 
 function App() {
   const [currentUser, setCurrentUser] = useState(() => {
-    const saved = localStorage.getItem('pazotti_user_v3');
+    const saved = localStorage.getItem('matriz_user_v3');
     return saved ? JSON.parse(saved) : null;
   });
   const [activeTab, setActiveTab] = useState('inicio'); // 'inicio', 'verbas', 'usuarios', 'config'
   const [entries, setEntries] = useState(() => {
-    const saved = localStorage.getItem('pazotti_verbas_v3');
+    const saved = localStorage.getItem('matriz_verbas_v3');
     return saved ? JSON.parse(saved) : [];
   });
   const [users, setUsers] = useState(() => {
-    const saved = localStorage.getItem('pazotti_user_system');
+    const saved = localStorage.getItem('matriz_user_system');
     if (saved) {
       const parsed = JSON.parse(saved);
       return parsed.length > 0 ? parsed : [{ username: 'admin', password: 'pazotti123', role: 'admin' }];
@@ -42,11 +42,11 @@ function App() {
 
   const [cloudUrl, setCloudUrl] = useState(() => {
     const NEW_URL = 'https://script.google.com/macros/s/AKfycbwfIi6yPtao742yOHPL0zJiL2751l7GSNc3W9Y5YRvecyh-w8hVh3Gd55xYXBwZ5pgN/exec';
-    const saved = localStorage.getItem('pazotti_cloud_url');
+    const saved = localStorage.getItem('matriz_cloud_url');
     
     // FORCED SYNC: If saved URL is different from NEW_URL, we override it to fix the user's sync issue
     if (saved !== NEW_URL) {
-      localStorage.setItem('pazotti_cloud_url', NEW_URL);
+      localStorage.setItem('matriz_cloud_url', NEW_URL);
       return NEW_URL;
     }
     return saved || NEW_URL;
@@ -70,23 +70,23 @@ function App() {
 
   // Save Config to Label
   useEffect(() => {
-    localStorage.setItem('pazotti_cloud_url', cloudUrl);
+    localStorage.setItem('matriz_cloud_url', cloudUrl);
   }, [cloudUrl]);
 
   // Sync to localStorage
   useEffect(() => {
-    localStorage.setItem('pazotti_verbas_v3', JSON.stringify(entries));
+    localStorage.setItem('matriz_verbas_v3', JSON.stringify(entries));
   }, [entries]);
 
   useEffect(() => {
-    localStorage.setItem('pazotti_user_system', JSON.stringify(users));
+    localStorage.setItem('matriz_user_system', JSON.stringify(users));
   }, [users]);
 
   useEffect(() => {
     if (currentUser) {
-      localStorage.setItem('pazotti_user_v3', JSON.stringify(currentUser));
+      localStorage.setItem('matriz_user_v3', JSON.stringify(currentUser));
     } else {
-      localStorage.removeItem('pazotti_user_v3');
+      localStorage.removeItem('matriz_user_v3');
     }
   }, [currentUser]);
 
@@ -108,7 +108,7 @@ function App() {
 
       // No-cors doesn't allow reading response, but we assume success if no exception
       setSyncStatus('success');
-      localStorage.setItem('pazotti_cloud_seeded', 'true'); // Marca como semeado após sucesso
+      localStorage.setItem('matriz_cloud_seeded', 'true'); // Marca como semeado após sucesso
       setTimeout(() => setSyncStatus('idle'), 3000);
     } catch (error) {
       console.error("Cloud Save Error:", error);
