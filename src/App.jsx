@@ -332,7 +332,7 @@ function App() {
       {/* Header */}
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '2rem', flexWrap: 'wrap', gap: '1rem' }}>
         <div>
-          <h1 className="title" style={{ margin: 0, fontSize: '1.5rem' }}>Pazotti Filial</h1>
+          <h1 className="title" style={{ margin: 0, fontSize: '1.5rem' }}>Pazotti Matriz</h1>
           <div style={{ display: 'flex', gap: '0.5rem', marginTop: '1rem' }}>
             <button onClick={() => setActiveTab('inicio')} className={`btn ${activeTab === 'inicio' ? 'btn-primary' : ''}`} style={{ background: activeTab === 'inicio' ? '' : 'transparent', color: activeTab === 'inicio' ? '' : 'var(--text-muted)' }}>
               <LayoutDashboard size={16} /> Início
