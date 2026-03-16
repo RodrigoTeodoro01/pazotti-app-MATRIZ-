@@ -20,7 +20,7 @@ Sistema web para controle e registro de verbas da Pazotti Matriz, integrado com 
 ## 🌐 Link do Sistema
 
 O portal está publicado e pode ser acessado em:
-[https://rodrigoteodoro01.github.io/pazotti-app-MATRIZ-/](https://rodrigoteodoro01.github.io/pazotti-app-MATRIZ-/)
+[https://rodrigoteodoro01.github.io/pazotti-app-MATRIZ/](https://rodrigoteodoro01.github.io/pazotti-app-MATRIZ/)
 
 ---
 Desenvolvido para Pazotti Matriz.
