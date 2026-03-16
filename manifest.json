@@ -1,7 +1,7 @@
 {
-    "name": "Pazotti Filial",
+    "name": "Pazotti Matriz",
     "short_name": "Pazotti",
-    "description": "Gestão de Verbas Pazotti Filial",
+    "description": "Gestão de Verbas Pazotti Matriz",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0f172a",
