@@ -1,16 +1,26 @@
-# React + Vite
+# PAZOTTI MATRIZ - Sistema de Gestão de Verbas
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Sistema web para controle e registro de verbas da Pazotti Matriz, integrado com Google Sheets.
 
-Currently, two official plugins are available:
+## 🚀 Funcionalidades
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Lançamentos de Verbas**: Registro rápido por supervisor, indústria e autorizador.
+- **Controle de Usuários**: Níveis de acesso para Admin e Usuários comuns.
+- **Sincronização em Nuvem**: Integração em tempo real com Google Sheets via Google Apps Script.
+- **Exportação**: Geração de arquivos Excel (.xlsx) diretamente do portal.
+- **PWA (Progressive Web App)**: Pode ser instalado como um aplicativo no celular ou computador.
 
-## React Compiler
+## 🛠️ Tecnologias Utilizadas
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Frontend**: React.js + Vite
+- **Banco de Dados**: Google Sheets (via Google Apps Script)
+- **Ícones**: Lucide React
+- **Estilização**: Vanilla CSS (Modern Design)
 
-## Expanding the ESLint configuration
+## 🌐 Link do Sistema
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+O portal está publicado e pode ser acessado em:
+[https://rodrigoteodoro01.github.io/pazotti-app-MATRIZ-/](https://rodrigoteodoro01.github.io/pazotti-app-MATRIZ-/)
+
+---
+Desenvolvido para Pazotti Matriz.
